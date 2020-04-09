@@ -450,7 +450,8 @@
 				TargetAttributes = {
 					266FD1651E1D7C6200935807 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = G9JFZTHBR6;
+						ProvisioningStyle = Automatic;
 					};
 					26AB70781E1DC67500BDAE34 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -489,7 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${PROJECT_DIR}/Clutch/move_and_sign.sh\"";
+			shellScript = "bash \"${PROJECT_DIR}/Clutch/move_and_sign.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -563,7 +564,9 @@
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES_ERROR;
 				CLANG_WARN_BOOL_CONVERSION = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G9JFZTHBR6;
 				GCC_CW_ASM_SYNTAX = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -578,8 +581,9 @@
 					"$(inherited)",
 					"-Wno-gnu-statement-expression",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kjc.Clutch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kjc.Clutch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -594,7 +598,9 @@
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES_ERROR;
 				CLANG_WARN_BOOL_CONVERSION = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G9JFZTHBR6;
 				GCC_CW_ASM_SYNTAX = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -609,8 +615,9 @@
 					"$(inherited)",
 					"-Wno-gnu-statement-expression",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kjc.Clutch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kjc.Clutch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

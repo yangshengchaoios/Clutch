@@ -8,7 +8,7 @@
 
 #import "ClutchPrint.h"
 
-NSUInteger KJPrintCurrentLogLevel = KJPrintLogLevelNormal;
+NSUInteger KJPrintCurrentLogLevel = KJPrintLogLevelDebug;
 
 static NSInteger KJPrintv(NSString *format, va_list ap) {
     if (![format hasSuffix:@"\n"]) {

@@ -72,9 +72,10 @@
     NSMutableArray<ClutchCommand *> *returnCommands = [NSMutableArray new];
     NSMutableArray<NSString *> *returnValues = [NSMutableArray new];
     BOOL commandFound = NO;
-
+    
+    KJPrint(@"arguments: %@", arguments);
     for (NSString *argument in arguments) {
-        if ([argument isEqualToString:arguments[0]]) {
+        if ([argument isEqualToString:arguments[0]]) { // pass the index=0 param
             continue;
         } else if ([argument isEqualToString:@"--no-color"]) {
             // Optionals
@@ -106,7 +107,7 @@
     if (returnCommands.count < 1) {
         return @[ self.allCommands[0] ];
     }
-
+    
     _values = returnValues;
 
     return returnCommands;

@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, ClutchCommandOption) {
     ClutchCommandOptionHelp,
     ClutchCommandOptionNoColor,
     ClutchCommandOptionVerbose,
-    ClutchCommandOptionDebug,
+    ClutchCommandOptionDebug = 10,
 };
 
 @interface ClutchCommand : NSObject

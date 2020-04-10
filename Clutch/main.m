@@ -73,6 +73,7 @@ int main(int argc, const char *argv[]) {
         if (commands.commands) {
             for (ClutchCommand *command in commands.commands) {
                 NSLog(@"command: %@", command.commandDescription);
+                NSLog(@"commands.values=%@, command.option=%ld", commands.values, command.option);
                 // Switch flags
                 switch (command.flag) {
                     case ClutchCommandFlagArgumentRequired: {
@@ -81,18 +82,7 @@ int main(int argc, const char *argv[]) {
                     default:
                         break;
                 }
-
-                // Switch optionals
-                switch (command.option) {
-                    case ClutchCommandOptionVerbose:
-                        KJPrintCurrentLogLevel = KJPrintLogLevelVerbose;
-                        break;
-                    case ClutchCommandOptionDebug:
-                        KJPrintCurrentLogLevel = KJPrintLogLevelDebug;
-                    default:
-                        break;
-                }
-
+                
                 switch (command.option) {
                     case ClutchCommandOptionNone: {
                         KJPrint(@"%@", commands.helpString);
@@ -141,6 +131,7 @@ int main(int argc, const char *argv[]) {
                         NSArray *_installedArray = _installedApps.allValues;
 
                         for (NSString *selection in values) {
+                            KJPrint(@"selection: %@", selection);
                             NSUInteger key;
                             Application *_selectedApp;
 
@@ -177,10 +168,8 @@ int main(int argc, const char *argv[]) {
                                         _selectedApp.bundleIdentifier,
                                         CLUTCH_VERSION);
                             }
-
                             gettimeofday(&gStart, NULL);
-                            if (![_selectedApp dumpToDirectoryURL:nil
-                                                     onlyBinaries:[_selectedOption isEqualToString:@"binary-dump"]]) {
+                            if ( ! [_selectedApp dumpToDirectoryURL:nil onlyBinaries:[_selectedOption isEqualToString:@"binary-dump"]]) {
                                 return 1;
                             }
                         }
@@ -204,6 +193,14 @@ int main(int argc, const char *argv[]) {
                     }
                     case ClutchCommandOptionHelp: {
                         KJPrint(@"%@", commands.helpString);
+                        break;
+                    }
+                    case ClutchCommandOptionVerbose: {
+                        KJPrintCurrentLogLevel = KJPrintLogLevelVerbose;
+                        break;
+                    }
+                    case ClutchCommandOptionDebug: {
+                        KJPrintCurrentLogLevel = KJPrintLogLevelDebug;
                         break;
                     }
                     default:

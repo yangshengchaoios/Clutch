@@ -26,12 +26,13 @@
 @implementation Application
 
 - (instancetype)initWithBundleInfo:(NSDictionary *)info {
+    KJPrint(@"Application initWithBundleInfo: %@", info);
     if (self = [super initWithBundleInfo:info]) {
 
         _workingUUID = [NSUUID new];
         _workingPath = [NSTemporaryDirectory()
             stringByAppendingPathComponent:[@"clutch" stringByAppendingPathComponent:_workingUUID.UUIDString]];
-
+        KJPrint(@"Application _workingPath: %@", _workingPath);
         [self reloadFrameworksInfo];
         [self reloadPluginsInfo];
         [self reloadWatchOSAppsInfo];
@@ -184,6 +185,7 @@
 }
 
 - (BOOL)dumpToDirectoryURL:(nullable NSURL *)directoryURL onlyBinaries:(BOOL)_onlyBinaries {
+    KJPrint(@"dumpToDirectoryURL: %@, onlyBinaries: %d", directoryURL, _onlyBinaries);
     [super dumpToDirectoryURL:directoryURL];
 
     [self prepareForDump];
@@ -312,10 +314,9 @@
 }
 
 - (NSString *)zipFilename {
-    return [NSString stringWithFormat:@"%@-iOS%@-(Clutch-%@).ipa",
+    return [NSString stringWithFormat:@"%@-iOS%@.ipa",
                                       self.bundleIdentifier,
-                                      self.infoDictionary[@"MinimumOSVersion"],
-                                      CLUTCH_VERSION];
+                                      self.infoDictionary[@"MinimumOSVersion"]];
 }
 
 - (NSString *)zipPrefix {

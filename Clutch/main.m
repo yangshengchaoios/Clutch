@@ -48,13 +48,13 @@ int main(int argc, const char *argv[]) {
     CLUTCH_UNUSED(argv);
 
     @autoreleasepool {
-        if (getuid() != 0) { // Clutch needs to be root user to run
-            KJPrint(@"Clutch needs to be run as the root user, please change user and rerun.");
-            return 0;
-        }
+//        if (getuid() != 0) { // Clutch needs to be root user to run
+//            KJPrint(@"Clutch needs to be run as the root user, please change user and rerun.");
+//            return 0;
+//        }
 
         if (SYSTEM_VERSION_LESS_THAN(NSFoundationVersionNumber_iOS_8_0)) {
-            KJPrint(@"You need iOS 8.0+ to use Clutch %@", CLUTCH_VERSION);
+            KJPrint(@"You need iOS 8.0+ to use Clutch");
             return 0;
         }
 
@@ -72,7 +72,7 @@ int main(int argc, const char *argv[]) {
         if (commands.commands) {
             for (ClutchCommand *command in commands.commands) {
                 KJPrint(@"command: %@", command.commandDescription);
-                KJPrint(@"commands.values=%@, command.option=%ld", commands.values, command.option);
+                KJPrint(@"commands.values=%@, command.option=%ul", commands.values, command.option);
                 // Switch flags
                 switch (command.flag) {
                     case ClutchCommandFlagArgumentRequired: {
@@ -163,9 +163,8 @@ int main(int argc, const char *argv[]) {
 
                             if (_selectedApp.hasAppleWatchApp) {
                                 KJPrint(@"%@ contains watchOS 2 compatible application. It's not possible to dump "
-                                        @"watchOS 2 apps with Clutch %@ at this moment.",
-                                        _selectedApp.bundleIdentifier,
-                                        CLUTCH_VERSION);
+                                        @"watchOS 2 apps with Clutch at this moment.",
+                                        _selectedApp.bundleIdentifier);
                             }
                             gettimeofday(&gStart, NULL);
                             if ( ! [_selectedApp dumpToDirectoryURL:nil onlyBinaries:[_selectedOption isEqualToString:@"binary-dump"]]) {
@@ -187,7 +186,6 @@ int main(int argc, const char *argv[]) {
                         break;
                     }
                     case ClutchCommandOptionVersion: {
-                        KJPrint(@"%@", CLUTCH_VERSION);
                         break;
                     }
                     case ClutchCommandOptionHelp: {

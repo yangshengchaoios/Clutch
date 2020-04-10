@@ -20,16 +20,6 @@ printf("%s\n", logString.UTF8String); \
 } while(0);
 
 
-#define KJPrint(...) do { \
-__Print(@"Normal ", __VA_ARGS__) \
-} while(0);
-
-#define KJPrintVerbose(...) do { \
-if (KJPrintCurrentLogLevel < KJPrintLogLevelVerbose) { break; } \
-__Print(@"Verbose", __VA_ARGS__) \
-} while(0);
-
-#define KJDebug(...) do { \
-if (KJPrintCurrentLogLevel < KJPrintLogLevelDebug) { break; } \
-__Print(@"Debug  ", __VA_ARGS__) \
-} while(0);
+#define KJPrint(...)        __Print(@"Normal ", __VA_ARGS__)
+#define KJPrintVerbose(...) if (KJPrintCurrentLogLevel >= KJPrintLogLevelVerbose) { __Print(@"Verbose", __VA_ARGS__); }
+#define KJDebug(...)        if (KJPrintCurrentLogLevel >= KJPrintLogLevelDebug) { __Print(@"Debug  ", __VA_ARGS__); }

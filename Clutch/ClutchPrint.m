@@ -8,4 +8,4 @@
 
 #import "ClutchPrint.h"
 
-NSUInteger KJPrintCurrentLogLevel = KJPrintLogLevelDebug;
+NSUInteger KJPrintCurrentLogLevel = KJPrintLogLevelNormal;

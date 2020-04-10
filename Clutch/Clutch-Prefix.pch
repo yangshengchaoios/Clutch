@@ -25,9 +25,6 @@
 typedef CGFLOAT_TYPE CGFloat;
 #define CGFLOAT_DEFINED 1
 
-/* Definition of `CLUTCH_VERSION'. */
-#define CLUTCH_VERSION ((NSString *)(NSBundle.mainBundle.infoDictionary[@"CFBundleVersion"]))
-
 /* Definition of `CLUTCH_UNUSED'. */
 #define CLUTCH_UNUSED(x) ((void)x)
 

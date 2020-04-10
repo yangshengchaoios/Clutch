@@ -10,7 +10,6 @@
 #import "ClutchPrint.h"
 #import "FrameworkLoader.h"
 #import "KJApplicationManager.h"
-#import "NSTask.h"
 #import "sha1.h"
 #import <Foundation/Foundation.h>
 #import <sys/time.h>

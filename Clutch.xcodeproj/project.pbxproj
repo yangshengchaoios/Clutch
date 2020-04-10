@@ -7,41 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D307F52724403C7800971DC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D307F52524403C7700971DC2 /* Main.storyboard */; };
 		D307F52924403EEE00971DC2 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D307F52824403EEE00971DC2 /* CoreServices.framework */; };
-		D3415C312440361500E2E7DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3415C302440361500E2E7DB /* Assets.xcassets */; };
-		D3415C342440361500E2E7DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3415C322440361500E2E7DB /* LaunchScreen.storyboard */; };
+		D307F5332440418900971DC2 /* optool-headers.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F52D2440418900971DC2 /* optool-headers.m */; };
+		D307F5342440418900971DC2 /* optool-operations.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F52E2440418900971DC2 /* optool-operations.m */; };
+		D307F5352440418900971DC2 /* NSData+Reading.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F52F2440418900971DC2 /* NSData+Reading.m */; };
+		D307F55D244042C200971DC2 /* move_and_sign.sh in Resources */ = {isa = PBXBuildFile; fileRef = D307F537244042C200971DC2 /* move_and_sign.sh */; };
+		D307F55E244042C200971DC2 /* ClutchBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F539244042C200971DC2 /* ClutchBundle.m */; };
+		D307F55F244042C200971DC2 /* Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F53A244042C200971DC2 /* Extension.m */; };
+		D307F560244042C200971DC2 /* Framework.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F53C244042C200971DC2 /* Framework.m */; };
+		D307F561244042C200971DC2 /* Binary.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F53D244042C200971DC2 /* Binary.m */; };
+		D307F562244042C200971DC2 /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F541244042C200971DC2 /* Application.m */; };
+		D307F563244042C200971DC2 /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F545244042C200971DC2 /* ZipArchive.m */; };
+		D307F564244042C200971DC2 /* FinalizeDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F549244042C200971DC2 /* FinalizeDumpOperation.m */; };
+		D307F565244042C200971DC2 /* ZipOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F54A244042C200971DC2 /* ZipOperation.m */; };
+		D307F566244042C200971DC2 /* BundleDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F54B244042C200971DC2 /* BundleDumpOperation.m */; };
+		D307F567244042C200971DC2 /* ASLRDisabler.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F54E244042C200971DC2 /* ASLRDisabler.m */; };
+		D307F568244042C200971DC2 /* ARMDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F54F244042C200971DC2 /* ARMDumper.m */; };
+		D307F569244042C200971DC2 /* Dumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F554244042C200971DC2 /* Dumper.m */; };
+		D307F56A244042C200971DC2 /* ARM64Dumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F556244042C200971DC2 /* ARM64Dumper.m */; };
+		D307F56B244042C200971DC2 /* FrameworkDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F557244042C200971DC2 /* FrameworkDumper.m */; };
+		D307F56C244042C200971DC2 /* FrameworkLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F55B244042C200971DC2 /* FrameworkLoader.m */; };
+		D307F56D244042C200971DC2 /* Framework64Dumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F55C244042C200971DC2 /* Framework64Dumper.m */; };
+		D307F587244042E100971DC2 /* KJApplicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F575244042E000971DC2 /* KJApplicationManager.m */; };
+		D307F589244042E100971DC2 /* ClutchPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F57B244042E000971DC2 /* ClutchPrint.m */; };
+		D307F58B244042E100971DC2 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = D307F57D244042E100971DC2 /* sha1.c */; };
+		D307F58C244042E100971DC2 /* ClutchCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F57E244042E100971DC2 /* ClutchCommands.m */; };
+		D307F58D244042E100971DC2 /* NSFileHandle+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F580244042E100971DC2 /* NSFileHandle+Private.m */; };
+		D307F58E244042E100971DC2 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F585244042E100971DC2 /* Device.m */; };
+		D307F594244044D900971DC2 /* scinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F590244044D900971DC2 /* scinfo.m */; };
+		D307F595244044D900971DC2 /* SCInfoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F592244044D900971DC2 /* SCInfoBuilder.m */; };
+		D307F5982440452000971DC2 /* NSBundle+Clutch.m in Sources */ = {isa = PBXBuildFile; fileRef = D307F5972440452000971DC2 /* NSBundle+Clutch.m */; };
 		D3415C372440361500E2E7DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C362440361500E2E7DB /* main.m */; };
-		D3415C8A2440371E00E2E7DB /* Framework.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C412440371A00E2E7DB /* Framework.m */; };
-		D3415C8B2440371E00E2E7DB /* SCInfoBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C432440371A00E2E7DB /* SCInfoBuilder.m */; };
-		D3415C8C2440371E00E2E7DB /* FrameworkLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C442440371B00E2E7DB /* FrameworkLoader.m */; };
-		D3415C8D2440371E00E2E7DB /* move_and_sign.sh in Resources */ = {isa = PBXBuildFile; fileRef = D3415C452440371B00E2E7DB /* move_and_sign.sh */; };
-		D3415C8E2440371E00E2E7DB /* ClutchBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C472440371B00E2E7DB /* ClutchBundle.m */; };
-		D3415C8F2440371E00E2E7DB /* Binary.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C4C2440371B00E2E7DB /* Binary.m */; };
-		D3415C902440371E00E2E7DB /* NSFileHandle+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C4F2440371B00E2E7DB /* NSFileHandle+Private.m */; };
-		D3415C912440371E00E2E7DB /* NSData+Reading.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C502440371B00E2E7DB /* NSData+Reading.m */; };
-		D3415C922440371E00E2E7DB /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = D3415C532440371B00E2E7DB /* sha1.c */; };
-		D3415C932440371E00E2E7DB /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C552440371C00E2E7DB /* Device.m */; };
-		D3415C942440371E00E2E7DB /* scinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C572440371C00E2E7DB /* scinfo.m */; };
-		D3415C952440371E00E2E7DB /* optool-operations.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C582440371C00E2E7DB /* optool-operations.m */; };
-		D3415C962440371E00E2E7DB /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C5A2440371C00E2E7DB /* Application.m */; };
-		D3415C972440371E00E2E7DB /* ARMDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C5D2440371C00E2E7DB /* ARMDumper.m */; };
-		D3415C992440371E00E2E7DB /* NSBundle+Clutch.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C612440371C00E2E7DB /* NSBundle+Clutch.m */; };
-		D3415C9A2440371E00E2E7DB /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C622440371C00E2E7DB /* ZipArchive.m */; };
-		D3415C9B2440371E00E2E7DB /* ClutchPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C672440371D00E2E7DB /* ClutchPrint.m */; };
-		D3415C9C2440371E00E2E7DB /* ClutchCommands.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C6B2440371D00E2E7DB /* ClutchCommands.m */; };
-		D3415CA12440371E00E2E7DB /* Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C772440371D00E2E7DB /* Extension.m */; };
-		D3415CA22440371E00E2E7DB /* Info.plist.in in Resources */ = {isa = PBXBuildFile; fileRef = D3415C782440371D00E2E7DB /* Info.plist.in */; };
-		D3415CA32440371E00E2E7DB /* KJApplicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C792440371D00E2E7DB /* KJApplicationManager.m */; };
-		D3415CA42440371E00E2E7DB /* BundleDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C7A2440371D00E2E7DB /* BundleDumpOperation.m */; };
-		D3415CA52440371E00E2E7DB /* ASLRDisabler.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C7C2440371D00E2E7DB /* ASLRDisabler.m */; };
-		D3415CA62440371E00E2E7DB /* ARM64Dumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C7D2440371E00E2E7DB /* ARM64Dumper.m */; };
-		D3415CA72440371E00E2E7DB /* Framework64Dumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C7F2440371E00E2E7DB /* Framework64Dumper.m */; };
-		D3415CA82440371E00E2E7DB /* FinalizeDumpOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C802440371E00E2E7DB /* FinalizeDumpOperation.m */; };
-		D3415CA92440371E00E2E7DB /* Dumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C822440371E00E2E7DB /* Dumper.m */; };
-		D3415CAA2440371E00E2E7DB /* optool-headers.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C852440371E00E2E7DB /* optool-headers.m */; };
-		D3415CAB2440371E00E2E7DB /* ZipOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C862440371E00E2E7DB /* ZipOperation.m */; };
-		D3415CAC2440371E00E2E7DB /* FrameworkDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C872440371E00E2E7DB /* FrameworkDumper.m */; };
 		D3415CC1244037D800E2E7DB /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = D3415CBB244037D800E2E7DB /* zip.c */; };
 		D3415CC2244037D800E2E7DB /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = D3415CBE244037D800E2E7DB /* unzip.c */; };
 		D3415CC3244037D800E2E7DB /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D3415CBF244037D800E2E7DB /* ioapi.c */; };
@@ -72,79 +68,74 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D307F52624403C7700971DC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D307F52824403EEE00971DC2 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		D307F52B2440418900971DC2 /* NSData+Reading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Reading.h"; sourceTree = "<group>"; };
+		D307F52C2440418900971DC2 /* optool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = optool.h; sourceTree = "<group>"; };
+		D307F52D2440418900971DC2 /* optool-headers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "optool-headers.m"; sourceTree = "<group>"; };
+		D307F52E2440418900971DC2 /* optool-operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "optool-operations.m"; sourceTree = "<group>"; };
+		D307F52F2440418900971DC2 /* NSData+Reading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Reading.m"; sourceTree = "<group>"; };
+		D307F5302440418900971DC2 /* optool-defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-defines.h"; sourceTree = "<group>"; };
+		D307F5312440418900971DC2 /* optool-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-headers.h"; sourceTree = "<group>"; };
+		D307F5322440418900971DC2 /* optool-operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-operations.h"; sourceTree = "<group>"; };
+		D307F537244042C200971DC2 /* move_and_sign.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = move_and_sign.sh; sourceTree = "<group>"; };
+		D307F539244042C200971DC2 /* ClutchBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClutchBundle.m; sourceTree = "<group>"; };
+		D307F53A244042C200971DC2 /* Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Extension.m; sourceTree = "<group>"; };
+		D307F53B244042C200971DC2 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		D307F53C244042C200971DC2 /* Framework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Framework.m; sourceTree = "<group>"; };
+		D307F53D244042C200971DC2 /* Binary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Binary.m; sourceTree = "<group>"; };
+		D307F53E244042C200971DC2 /* ClutchBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutchBundle.h; sourceTree = "<group>"; };
+		D307F53F244042C200971DC2 /* Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
+		D307F540244042C200971DC2 /* Framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Framework.h; sourceTree = "<group>"; };
+		D307F541244042C200971DC2 /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		D307F542244042C200971DC2 /* Binary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binary.h; sourceTree = "<group>"; };
+		D307F544244042C200971DC2 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		D307F545244042C200971DC2 /* ZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipArchive.m; sourceTree = "<group>"; };
+		D307F547244042C200971DC2 /* ZipOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipOperation.h; sourceTree = "<group>"; };
+		D307F548244042C200971DC2 /* BundleDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleDumpOperation.h; sourceTree = "<group>"; };
+		D307F549244042C200971DC2 /* FinalizeDumpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalizeDumpOperation.m; sourceTree = "<group>"; };
+		D307F54A244042C200971DC2 /* ZipOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipOperation.m; sourceTree = "<group>"; };
+		D307F54B244042C200971DC2 /* BundleDumpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleDumpOperation.m; sourceTree = "<group>"; };
+		D307F54C244042C200971DC2 /* FinalizeDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalizeDumpOperation.h; sourceTree = "<group>"; };
+		D307F54E244042C200971DC2 /* ASLRDisabler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLRDisabler.m; sourceTree = "<group>"; };
+		D307F54F244042C200971DC2 /* ARMDumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARMDumper.m; sourceTree = "<group>"; };
+		D307F550244042C200971DC2 /* FrameworkDumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkDumper.h; sourceTree = "<group>"; };
+		D307F551244042C200971DC2 /* ARM64Dumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARM64Dumper.h; sourceTree = "<group>"; };
+		D307F552244042C200971DC2 /* FrameworkLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkLoader.h; sourceTree = "<group>"; };
+		D307F553244042C200971DC2 /* Framework64Dumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Framework64Dumper.h; sourceTree = "<group>"; };
+		D307F554244042C200971DC2 /* Dumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dumper.m; sourceTree = "<group>"; };
+		D307F555244042C200971DC2 /* BinaryDumpProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryDumpProtocol.h; sourceTree = "<group>"; };
+		D307F556244042C200971DC2 /* ARM64Dumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARM64Dumper.m; sourceTree = "<group>"; };
+		D307F557244042C200971DC2 /* FrameworkDumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameworkDumper.m; sourceTree = "<group>"; };
+		D307F558244042C200971DC2 /* ARMDumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARMDumper.h; sourceTree = "<group>"; };
+		D307F559244042C200971DC2 /* ASLRDisabler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLRDisabler.h; sourceTree = "<group>"; };
+		D307F55A244042C200971DC2 /* Dumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dumper.h; sourceTree = "<group>"; };
+		D307F55B244042C200971DC2 /* FrameworkLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameworkLoader.m; sourceTree = "<group>"; };
+		D307F55C244042C200971DC2 /* Framework64Dumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Framework64Dumper.m; sourceTree = "<group>"; };
+		D307F571244042E000971DC2 /* FBApplicationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBApplicationInfo.h; sourceTree = "<group>"; };
+		D307F572244042E000971DC2 /* ClutchPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutchPrint.h; sourceTree = "<group>"; };
+		D307F574244042E000971DC2 /* NSFileHandle+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+Private.h"; sourceTree = "<group>"; };
+		D307F575244042E000971DC2 /* KJApplicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJApplicationManager.m; sourceTree = "<group>"; };
+		D307F577244042E000971DC2 /* Clutch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Clutch-Prefix.pch"; sourceTree = "<group>"; };
+		D307F578244042E000971DC2 /* LSApplicationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationProxy.h; sourceTree = "<group>"; };
+		D307F57A244042E000971DC2 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		D307F57B244042E000971DC2 /* ClutchPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClutchPrint.m; sourceTree = "<group>"; };
+		D307F57D244042E100971DC2 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		D307F57E244042E100971DC2 /* ClutchCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClutchCommands.m; sourceTree = "<group>"; };
+		D307F57F244042E100971DC2 /* ClutchCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutchCommands.h; sourceTree = "<group>"; };
+		D307F580244042E100971DC2 /* NSFileHandle+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+Private.m"; sourceTree = "<group>"; };
+		D307F582244042E100971DC2 /* LSApplicationWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationWorkspace.h; sourceTree = "<group>"; };
+		D307F583244042E100971DC2 /* KJApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJApplicationManager.h; sourceTree = "<group>"; };
+		D307F584244042E100971DC2 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		D307F585244042E100971DC2 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		D307F58F2440449600971DC2 /* mach_vm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mach_vm.h; sourceTree = "<group>"; };
+		D307F590244044D900971DC2 /* scinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scinfo.m; sourceTree = "<group>"; };
+		D307F591244044D900971DC2 /* scinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scinfo.h; sourceTree = "<group>"; };
+		D307F592244044D900971DC2 /* SCInfoBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCInfoBuilder.m; sourceTree = "<group>"; };
+		D307F593244044D900971DC2 /* SCInfoBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCInfoBuilder.h; sourceTree = "<group>"; };
+		D307F5962440452000971DC2 /* NSBundle+Clutch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Clutch.h"; sourceTree = "<group>"; };
+		D307F5972440452000971DC2 /* NSBundle+Clutch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Clutch.m"; sourceTree = "<group>"; };
 		D3415C212440361400E2E7DB /* Clutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3415C302440361500E2E7DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D3415C332440361500E2E7DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D3415C352440361500E2E7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3415C362440361500E2E7DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D3415C3D2440371A00E2E7DB /* Framework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Framework.h; sourceTree = "<group>"; };
-		D3415C3E2440371A00E2E7DB /* Dumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dumper.h; sourceTree = "<group>"; };
-		D3415C3F2440371A00E2E7DB /* FrameworkLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkLoader.h; sourceTree = "<group>"; };
-		D3415C402440371A00E2E7DB /* NSData+Reading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Reading.h"; sourceTree = "<group>"; };
-		D3415C412440371A00E2E7DB /* Framework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Framework.m; sourceTree = "<group>"; };
-		D3415C422440371A00E2E7DB /* optool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = optool.h; sourceTree = "<group>"; };
-		D3415C432440371A00E2E7DB /* SCInfoBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCInfoBuilder.m; sourceTree = "<group>"; };
-		D3415C442440371B00E2E7DB /* FrameworkLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameworkLoader.m; sourceTree = "<group>"; };
-		D3415C452440371B00E2E7DB /* move_and_sign.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = move_and_sign.sh; sourceTree = "<group>"; };
-		D3415C462440371B00E2E7DB /* mach_vm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mach_vm.h; sourceTree = "<group>"; };
-		D3415C472440371B00E2E7DB /* ClutchBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClutchBundle.m; sourceTree = "<group>"; };
-		D3415C482440371B00E2E7DB /* ARM64Dumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARM64Dumper.h; sourceTree = "<group>"; };
-		D3415C492440371B00E2E7DB /* optool-operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-operations.h"; sourceTree = "<group>"; };
-		D3415C4B2440371B00E2E7DB /* optool-defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-defines.h"; sourceTree = "<group>"; };
-		D3415C4C2440371B00E2E7DB /* Binary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Binary.m; sourceTree = "<group>"; };
-		D3415C4D2440371B00E2E7DB /* BundleDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleDumpOperation.h; sourceTree = "<group>"; };
-		D3415C4E2440371B00E2E7DB /* BinaryDumpProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinaryDumpProtocol.h; sourceTree = "<group>"; };
-		D3415C4F2440371B00E2E7DB /* NSFileHandle+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+Private.m"; sourceTree = "<group>"; };
-		D3415C502440371B00E2E7DB /* NSData+Reading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Reading.m"; sourceTree = "<group>"; };
-		D3415C512440371B00E2E7DB /* SCInfoBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCInfoBuilder.h; sourceTree = "<group>"; };
-		D3415C522440371B00E2E7DB /* ARMDumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARMDumper.h; sourceTree = "<group>"; };
-		D3415C532440371B00E2E7DB /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
-		D3415C542440371B00E2E7DB /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
-		D3415C552440371C00E2E7DB /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
-		D3415C562440371C00E2E7DB /* Binary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binary.h; sourceTree = "<group>"; };
-		D3415C572440371C00E2E7DB /* scinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scinfo.m; sourceTree = "<group>"; };
-		D3415C582440371C00E2E7DB /* optool-operations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "optool-operations.m"; sourceTree = "<group>"; };
-		D3415C592440371C00E2E7DB /* Framework64Dumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Framework64Dumper.h; sourceTree = "<group>"; };
-		D3415C5A2440371C00E2E7DB /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
-		D3415C5B2440371C00E2E7DB /* LSApplicationWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationWorkspace.h; sourceTree = "<group>"; };
-		D3415C5C2440371C00E2E7DB /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
-		D3415C5D2440371C00E2E7DB /* ARMDumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARMDumper.m; sourceTree = "<group>"; };
-		D3415C5F2440371C00E2E7DB /* Clutch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Clutch-Prefix.pch"; sourceTree = "<group>"; };
-		D3415C602440371C00E2E7DB /* ClutchPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutchPrint.h; sourceTree = "<group>"; };
-		D3415C612440371C00E2E7DB /* NSBundle+Clutch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Clutch.m"; sourceTree = "<group>"; };
-		D3415C622440371C00E2E7DB /* ZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipArchive.m; sourceTree = "<group>"; };
-		D3415C632440371C00E2E7DB /* NSTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTask.h; sourceTree = "<group>"; };
-		D3415C642440371C00E2E7DB /* NSBundle+Clutch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Clutch.h"; sourceTree = "<group>"; };
-		D3415C652440371D00E2E7DB /* FinalizeDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalizeDumpOperation.h; sourceTree = "<group>"; };
-		D3415C662440371D00E2E7DB /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
-		D3415C672440371D00E2E7DB /* ClutchPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClutchPrint.m; sourceTree = "<group>"; };
-		D3415C682440371D00E2E7DB /* optool-headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-headers.h"; sourceTree = "<group>"; };
-		D3415C692440371D00E2E7DB /* ClutchBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutchBundle.h; sourceTree = "<group>"; };
-		D3415C6A2440371D00E2E7DB /* NSFileHandle+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+Private.h"; sourceTree = "<group>"; };
-		D3415C6B2440371D00E2E7DB /* ClutchCommands.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClutchCommands.m; sourceTree = "<group>"; };
-		D3415C6C2440371D00E2E7DB /* ZipOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipOperation.h; sourceTree = "<group>"; };
-		D3415C6D2440371D00E2E7DB /* ASLRDisabler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLRDisabler.h; sourceTree = "<group>"; };
-		D3415C772440371D00E2E7DB /* Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Extension.m; sourceTree = "<group>"; };
-		D3415C782440371D00E2E7DB /* Info.plist.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Info.plist.in; sourceTree = "<group>"; };
-		D3415C792440371D00E2E7DB /* KJApplicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KJApplicationManager.m; sourceTree = "<group>"; };
-		D3415C7A2440371D00E2E7DB /* BundleDumpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BundleDumpOperation.m; sourceTree = "<group>"; };
-		D3415C7B2440371D00E2E7DB /* KJApplicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KJApplicationManager.h; sourceTree = "<group>"; };
-		D3415C7C2440371D00E2E7DB /* ASLRDisabler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLRDisabler.m; sourceTree = "<group>"; };
-		D3415C7D2440371E00E2E7DB /* ARM64Dumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARM64Dumper.m; sourceTree = "<group>"; };
-		D3415C7E2440371E00E2E7DB /* ClutchCommands.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutchCommands.h; sourceTree = "<group>"; };
-		D3415C7F2440371E00E2E7DB /* Framework64Dumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Framework64Dumper.m; sourceTree = "<group>"; };
-		D3415C802440371E00E2E7DB /* FinalizeDumpOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalizeDumpOperation.m; sourceTree = "<group>"; };
-		D3415C812440371E00E2E7DB /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		D3415C822440371E00E2E7DB /* Dumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dumper.m; sourceTree = "<group>"; };
-		D3415C832440371E00E2E7DB /* FBApplicationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBApplicationInfo.h; sourceTree = "<group>"; };
-		D3415C842440371E00E2E7DB /* scinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scinfo.h; sourceTree = "<group>"; };
-		D3415C852440371E00E2E7DB /* optool-headers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "optool-headers.m"; sourceTree = "<group>"; };
-		D3415C862440371E00E2E7DB /* ZipOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipOperation.m; sourceTree = "<group>"; };
-		D3415C872440371E00E2E7DB /* FrameworkDumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameworkDumper.m; sourceTree = "<group>"; };
-		D3415C882440371E00E2E7DB /* Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Extension.h; sourceTree = "<group>"; };
-		D3415C892440371E00E2E7DB /* FrameworkDumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameworkDumper.h; sourceTree = "<group>"; };
 		D3415CB12440379D00E2E7DB /* libMiniZip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMiniZip.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3415CBA244037D800E2E7DB /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
 		D3415CBB244037D800E2E7DB /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
@@ -157,7 +148,6 @@
 		D3415CCA244037FE00E2E7DB /* libncurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libncurses.tbd; path = usr/lib/libncurses.tbd; sourceTree = SDKROOT; };
 		D3415CCB2440380900E2E7DB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3415CCC2440381000E2E7DB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		D3415CCE2440392D00E2E7DB /* LSApplicationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationProxy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +171,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D307F52A2440418900971DC2 /* optool */ = {
+			isa = PBXGroup;
+			children = (
+				D307F52B2440418900971DC2 /* NSData+Reading.h */,
+				D307F52F2440418900971DC2 /* NSData+Reading.m */,
+				D307F5302440418900971DC2 /* optool-defines.h */,
+				D307F5312440418900971DC2 /* optool-headers.h */,
+				D307F52D2440418900971DC2 /* optool-headers.m */,
+				D307F5322440418900971DC2 /* optool-operations.h */,
+				D307F52E2440418900971DC2 /* optool-operations.m */,
+				D307F52C2440418900971DC2 /* optool.h */,
+			);
+			path = optool;
+			sourceTree = "<group>";
+		};
+		D307F536244042C200971DC2 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				D307F537244042C200971DC2 /* move_and_sign.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		D307F538244042C200971DC2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D307F53B244042C200971DC2 /* Application.h */,
+				D307F541244042C200971DC2 /* Application.m */,
+				D307F542244042C200971DC2 /* Binary.h */,
+				D307F53D244042C200971DC2 /* Binary.m */,
+				D307F53E244042C200971DC2 /* ClutchBundle.h */,
+				D307F539244042C200971DC2 /* ClutchBundle.m */,
+				D307F53F244042C200971DC2 /* Extension.h */,
+				D307F53A244042C200971DC2 /* Extension.m */,
+				D307F540244042C200971DC2 /* Framework.h */,
+				D307F53C244042C200971DC2 /* Framework.m */,
+				D307F591244044D900971DC2 /* scinfo.h */,
+				D307F590244044D900971DC2 /* scinfo.m */,
+				D307F593244044D900971DC2 /* SCInfoBuilder.h */,
+				D307F592244044D900971DC2 /* SCInfoBuilder.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D307F543244042C200971DC2 /* zip */ = {
+			isa = PBXGroup;
+			children = (
+				D307F544244042C200971DC2 /* ZipArchive.h */,
+				D307F545244042C200971DC2 /* ZipArchive.m */,
+			);
+			path = zip;
+			sourceTree = "<group>";
+		};
+		D307F546244042C200971DC2 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				D307F548244042C200971DC2 /* BundleDumpOperation.h */,
+				D307F54B244042C200971DC2 /* BundleDumpOperation.m */,
+				D307F54C244042C200971DC2 /* FinalizeDumpOperation.h */,
+				D307F549244042C200971DC2 /* FinalizeDumpOperation.m */,
+				D307F547244042C200971DC2 /* ZipOperation.h */,
+				D307F54A244042C200971DC2 /* ZipOperation.m */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		D307F54D244042C200971DC2 /* Dumpers */ = {
+			isa = PBXGroup;
+			children = (
+				D307F551244042C200971DC2 /* ARM64Dumper.h */,
+				D307F556244042C200971DC2 /* ARM64Dumper.m */,
+				D307F558244042C200971DC2 /* ARMDumper.h */,
+				D307F54F244042C200971DC2 /* ARMDumper.m */,
+				D307F559244042C200971DC2 /* ASLRDisabler.h */,
+				D307F54E244042C200971DC2 /* ASLRDisabler.m */,
+				D307F555244042C200971DC2 /* BinaryDumpProtocol.h */,
+				D307F55A244042C200971DC2 /* Dumper.h */,
+				D307F554244042C200971DC2 /* Dumper.m */,
+				D307F553244042C200971DC2 /* Framework64Dumper.h */,
+				D307F55C244042C200971DC2 /* Framework64Dumper.m */,
+				D307F550244042C200971DC2 /* FrameworkDumper.h */,
+				D307F557244042C200971DC2 /* FrameworkDumper.m */,
+				D307F552244042C200971DC2 /* FrameworkLoader.h */,
+				D307F55B244042C200971DC2 /* FrameworkLoader.m */,
+				D307F58F2440449600971DC2 /* mach_vm.h */,
+				D307F5962440452000971DC2 /* NSBundle+Clutch.h */,
+				D307F5972440452000971DC2 /* NSBundle+Clutch.m */,
+			);
+			path = Dumpers;
+			sourceTree = "<group>";
+		};
 		D3415C182440361400E2E7DB = {
 			isa = PBXGroup;
 			children = (
@@ -203,77 +284,28 @@
 		D3415C232440361400E2E7DB /* Clutch */ = {
 			isa = PBXGroup;
 			children = (
-				D3415CCE2440392D00E2E7DB /* LSApplicationProxy.h */,
-				D3415C662440371D00E2E7DB /* Application.h */,
-				D3415C5A2440371C00E2E7DB /* Application.m */,
-				D3415C482440371B00E2E7DB /* ARM64Dumper.h */,
-				D3415C7D2440371E00E2E7DB /* ARM64Dumper.m */,
-				D3415C522440371B00E2E7DB /* ARMDumper.h */,
-				D3415C5D2440371C00E2E7DB /* ARMDumper.m */,
-				D3415C6D2440371D00E2E7DB /* ASLRDisabler.h */,
-				D3415C7C2440371D00E2E7DB /* ASLRDisabler.m */,
-				D3415C562440371C00E2E7DB /* Binary.h */,
-				D3415C4C2440371B00E2E7DB /* Binary.m */,
-				D3415C4E2440371B00E2E7DB /* BinaryDumpProtocol.h */,
-				D3415C4D2440371B00E2E7DB /* BundleDumpOperation.h */,
-				D3415C7A2440371D00E2E7DB /* BundleDumpOperation.m */,
-				D3415C5F2440371C00E2E7DB /* Clutch-Prefix.pch */,
-				D3415C692440371D00E2E7DB /* ClutchBundle.h */,
-				D3415C472440371B00E2E7DB /* ClutchBundle.m */,
-				D3415C7E2440371E00E2E7DB /* ClutchCommands.h */,
-				D3415C6B2440371D00E2E7DB /* ClutchCommands.m */,
-				D3415C602440371C00E2E7DB /* ClutchPrint.h */,
-				D3415C672440371D00E2E7DB /* ClutchPrint.m */,
-				D3415C812440371E00E2E7DB /* Device.h */,
-				D3415C552440371C00E2E7DB /* Device.m */,
-				D3415C3E2440371A00E2E7DB /* Dumper.h */,
-				D3415C822440371E00E2E7DB /* Dumper.m */,
-				D3415C882440371E00E2E7DB /* Extension.h */,
-				D3415C772440371D00E2E7DB /* Extension.m */,
-				D3415C832440371E00E2E7DB /* FBApplicationInfo.h */,
-				D3415C652440371D00E2E7DB /* FinalizeDumpOperation.h */,
-				D3415C802440371E00E2E7DB /* FinalizeDumpOperation.m */,
-				D3415C3D2440371A00E2E7DB /* Framework.h */,
-				D3415C412440371A00E2E7DB /* Framework.m */,
-				D3415C592440371C00E2E7DB /* Framework64Dumper.h */,
-				D3415C7F2440371E00E2E7DB /* Framework64Dumper.m */,
-				D3415C892440371E00E2E7DB /* FrameworkDumper.h */,
-				D3415C872440371E00E2E7DB /* FrameworkDumper.m */,
-				D3415C3F2440371A00E2E7DB /* FrameworkLoader.h */,
-				D3415C442440371B00E2E7DB /* FrameworkLoader.m */,
-				D3415C782440371D00E2E7DB /* Info.plist.in */,
-				D3415C7B2440371D00E2E7DB /* KJApplicationManager.h */,
-				D3415C792440371D00E2E7DB /* KJApplicationManager.m */,
-				D3415C5B2440371C00E2E7DB /* LSApplicationWorkspace.h */,
-				D3415C462440371B00E2E7DB /* mach_vm.h */,
-				D3415C452440371B00E2E7DB /* move_and_sign.sh */,
-				D3415C642440371C00E2E7DB /* NSBundle+Clutch.h */,
-				D3415C612440371C00E2E7DB /* NSBundle+Clutch.m */,
-				D3415C402440371A00E2E7DB /* NSData+Reading.h */,
-				D3415C502440371B00E2E7DB /* NSData+Reading.m */,
-				D3415C6A2440371D00E2E7DB /* NSFileHandle+Private.h */,
-				D3415C4F2440371B00E2E7DB /* NSFileHandle+Private.m */,
-				D3415C632440371C00E2E7DB /* NSTask.h */,
-				D3415C4B2440371B00E2E7DB /* optool-defines.h */,
-				D3415C682440371D00E2E7DB /* optool-headers.h */,
-				D3415C852440371E00E2E7DB /* optool-headers.m */,
-				D3415C492440371B00E2E7DB /* optool-operations.h */,
-				D3415C582440371C00E2E7DB /* optool-operations.m */,
-				D3415C422440371A00E2E7DB /* optool.h */,
-				D3415C842440371E00E2E7DB /* scinfo.h */,
-				D3415C572440371C00E2E7DB /* scinfo.m */,
-				D3415C512440371B00E2E7DB /* SCInfoBuilder.h */,
-				D3415C432440371A00E2E7DB /* SCInfoBuilder.m */,
-				D3415C532440371B00E2E7DB /* sha1.c */,
-				D3415C542440371B00E2E7DB /* sha1.h */,
-				D3415C5C2440371C00E2E7DB /* ZipArchive.h */,
-				D3415C622440371C00E2E7DB /* ZipArchive.m */,
-				D3415C6C2440371D00E2E7DB /* ZipOperation.h */,
-				D3415C862440371E00E2E7DB /* ZipOperation.m */,
-				D3415C302440361500E2E7DB /* Assets.xcassets */,
-				D307F52524403C7700971DC2 /* Main.storyboard */,
-				D3415C322440361500E2E7DB /* LaunchScreen.storyboard */,
-				D3415C352440361500E2E7DB /* Info.plist */,
+				D307F546244042C200971DC2 /* Operations */,
+				D307F52A2440418900971DC2 /* optool */,
+				D307F536244042C200971DC2 /* Scripts */,
+				D307F543244042C200971DC2 /* zip */,
+				D307F54D244042C200971DC2 /* Dumpers */,
+				D307F538244042C200971DC2 /* Application */,
+				D307F577244042E000971DC2 /* Clutch-Prefix.pch */,
+				D307F57F244042E100971DC2 /* ClutchCommands.h */,
+				D307F57E244042E100971DC2 /* ClutchCommands.m */,
+				D307F572244042E000971DC2 /* ClutchPrint.h */,
+				D307F57B244042E000971DC2 /* ClutchPrint.m */,
+				D307F584244042E100971DC2 /* Device.h */,
+				D307F585244042E100971DC2 /* Device.m */,
+				D307F571244042E000971DC2 /* FBApplicationInfo.h */,
+				D307F583244042E100971DC2 /* KJApplicationManager.h */,
+				D307F575244042E000971DC2 /* KJApplicationManager.m */,
+				D307F578244042E000971DC2 /* LSApplicationProxy.h */,
+				D307F582244042E100971DC2 /* LSApplicationWorkspace.h */,
+				D307F574244042E000971DC2 /* NSFileHandle+Private.h */,
+				D307F580244042E100971DC2 /* NSFileHandle+Private.m */,
+				D307F57D244042E100971DC2 /* sha1.c */,
+				D307F57A244042E000971DC2 /* sha1.h */,
 				D3415C362440361500E2E7DB /* main.m */,
 			);
 			path = Clutch;
@@ -385,11 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3415C342440361500E2E7DB /* LaunchScreen.storyboard in Resources */,
-				D307F52724403C7800971DC2 /* Main.storyboard in Resources */,
-				D3415CA22440371E00E2E7DB /* Info.plist.in in Resources */,
-				D3415C312440361500E2E7DB /* Assets.xcassets in Resources */,
-				D3415C8D2440371E00E2E7DB /* move_and_sign.sh in Resources */,
+				D307F55D244042C200971DC2 /* move_and_sign.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +439,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${PROJECT_DIR}/Clutch/move_and_sign.sh\"\n";
+			shellScript = "bash \"${PROJECT_DIR}/Clutch/Scripts/move_and_sign.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -420,35 +448,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3415C922440371E00E2E7DB /* sha1.c in Sources */,
-				D3415CA12440371E00E2E7DB /* Extension.m in Sources */,
-				D3415C942440371E00E2E7DB /* scinfo.m in Sources */,
-				D3415CA82440371E00E2E7DB /* FinalizeDumpOperation.m in Sources */,
-				D3415C902440371E00E2E7DB /* NSFileHandle+Private.m in Sources */,
-				D3415CA42440371E00E2E7DB /* BundleDumpOperation.m in Sources */,
-				D3415CA72440371E00E2E7DB /* Framework64Dumper.m in Sources */,
-				D3415C992440371E00E2E7DB /* NSBundle+Clutch.m in Sources */,
-				D3415C9B2440371E00E2E7DB /* ClutchPrint.m in Sources */,
-				D3415C9C2440371E00E2E7DB /* ClutchCommands.m in Sources */,
+				D307F58B244042E100971DC2 /* sha1.c in Sources */,
+				D307F594244044D900971DC2 /* scinfo.m in Sources */,
+				D307F569244042C200971DC2 /* Dumper.m in Sources */,
+				D307F56B244042C200971DC2 /* FrameworkDumper.m in Sources */,
+				D307F562244042C200971DC2 /* Application.m in Sources */,
+				D307F568244042C200971DC2 /* ARMDumper.m in Sources */,
+				D307F565244042C200971DC2 /* ZipOperation.m in Sources */,
+				D307F587244042E100971DC2 /* KJApplicationManager.m in Sources */,
+				D307F5982440452000971DC2 /* NSBundle+Clutch.m in Sources */,
+				D307F564244042C200971DC2 /* FinalizeDumpOperation.m in Sources */,
+				D307F561244042C200971DC2 /* Binary.m in Sources */,
+				D307F589244042E100971DC2 /* ClutchPrint.m in Sources */,
+				D307F5332440418900971DC2 /* optool-headers.m in Sources */,
+				D307F5352440418900971DC2 /* NSData+Reading.m in Sources */,
+				D307F5342440418900971DC2 /* optool-operations.m in Sources */,
+				D307F567244042C200971DC2 /* ASLRDisabler.m in Sources */,
+				D307F56C244042C200971DC2 /* FrameworkLoader.m in Sources */,
+				D307F55F244042C200971DC2 /* Extension.m in Sources */,
+				D307F595244044D900971DC2 /* SCInfoBuilder.m in Sources */,
+				D307F563244042C200971DC2 /* ZipArchive.m in Sources */,
+				D307F56A244042C200971DC2 /* ARM64Dumper.m in Sources */,
+				D307F56D244042C200971DC2 /* Framework64Dumper.m in Sources */,
+				D307F58C244042E100971DC2 /* ClutchCommands.m in Sources */,
+				D307F560244042C200971DC2 /* Framework.m in Sources */,
+				D307F58D244042E100971DC2 /* NSFileHandle+Private.m in Sources */,
+				D307F566244042C200971DC2 /* BundleDumpOperation.m in Sources */,
+				D307F55E244042C200971DC2 /* ClutchBundle.m in Sources */,
+				D307F58E244042E100971DC2 /* Device.m in Sources */,
 				D3415C372440361500E2E7DB /* main.m in Sources */,
-				D3415C972440371E00E2E7DB /* ARMDumper.m in Sources */,
-				D3415C9A2440371E00E2E7DB /* ZipArchive.m in Sources */,
-				D3415C912440371E00E2E7DB /* NSData+Reading.m in Sources */,
-				D3415CA92440371E00E2E7DB /* Dumper.m in Sources */,
-				D3415CAA2440371E00E2E7DB /* optool-headers.m in Sources */,
-				D3415C8B2440371E00E2E7DB /* SCInfoBuilder.m in Sources */,
-				D3415CA62440371E00E2E7DB /* ARM64Dumper.m in Sources */,
-				D3415CA32440371E00E2E7DB /* KJApplicationManager.m in Sources */,
-				D3415C8A2440371E00E2E7DB /* Framework.m in Sources */,
-				D3415C8E2440371E00E2E7DB /* ClutchBundle.m in Sources */,
-				D3415C932440371E00E2E7DB /* Device.m in Sources */,
-				D3415CA52440371E00E2E7DB /* ASLRDisabler.m in Sources */,
-				D3415CAC2440371E00E2E7DB /* FrameworkDumper.m in Sources */,
-				D3415C962440371E00E2E7DB /* Application.m in Sources */,
-				D3415C952440371E00E2E7DB /* optool-operations.m in Sources */,
-				D3415CAB2440371E00E2E7DB /* ZipOperation.m in Sources */,
-				D3415C8F2440371E00E2E7DB /* Binary.m in Sources */,
-				D3415C8C2440371E00E2E7DB /* FrameworkLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,25 +499,6 @@
 			targetProxy = D3415CC8244037F700E2E7DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D307F52524403C7700971DC2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D307F52624403C7700971DC2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D3415C322440361500E2E7DB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D3415C332440361500E2E7DB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D3415C382440361500E2E7DB /* Debug */ = {

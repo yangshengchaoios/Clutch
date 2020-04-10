@@ -32,8 +32,8 @@
 
 - (void)failedOperation {
     _failed = YES;
-    NSLog(@"failed operation :(");
-    NSLog(@"application %@", _application.dumpQueue);
+    KJPrint(@"failed operation :(");
+    KJPrint(@"application %@", _application.dumpQueue);
     NSArray *wow = _application.dumpQueue.operations;
     for (NSOperation *operation in wow) {
         (void)operation; // for release build

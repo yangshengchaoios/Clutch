@@ -298,7 +298,7 @@ BOOL binaryHasRPATH(NSMutableData *binary, NSString *dylib, uint32_t *lastOffset
     if (lastOffset != NULL)
         *lastOffset = loadOffset;
     if (!foundRPATH) {
-        NSLog(@"didn't find rpath, no injection!");
+        KJPrint(@"didn't find rpath, no injection!");
         return YES;
     }
     return NO;
@@ -331,11 +331,11 @@ BOOL insertRPATHIntoBinary(NSString *dylibPath, NSMutableData *binary, thin_head
     // since everything is offset-based–we'd have to go in and adjust every offset)
     // So instead take advantage of the huge amount of padding after the load commands
     if (strcmp(occupant.bytes, "\0")) {
-        NSLog(@"cannot inject payload into %s because there is no room", dylibPath.fileSystemRepresentation);
+        KJPrint(@"cannot inject payload into %s because there is no room", dylibPath.fileSystemRepresentation);
         return NO;
     }
 
-    NSLog(@"Inserting LC_RPATH command for architecture: %@", [Dumper readableArchFromHeader:macho]);
+    KJPrint(@"Inserting LC_RPATH command for architecture: %@", [Dumper readableArchFromHeader:macho]);
 
     struct rpath_command command;
     command.path.offset = sizeof(struct rpath_command);
@@ -402,7 +402,7 @@ BOOL insertLoadEntryIntoBinary(NSString *dylibPath, NSMutableData *binary, thin_
     // since everything is offset-based–we'd have to go in and adjust every offset)
     // So instead take advantage of the huge amount of padding after the load commands
     if (strcmp(occupant.bytes, "\0")) {
-        NSLog(@"cannot inject payload into %s because there is no room", dylibPath.fileSystemRepresentation);
+        KJPrint(@"cannot inject payload into %s because there is no room", dylibPath.fileSystemRepresentation);
         return NO;
     }
 

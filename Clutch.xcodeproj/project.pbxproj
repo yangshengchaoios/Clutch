@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3415C262440361400E2E7DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C252440361400E2E7DB /* AppDelegate.m */; };
-		D3415C292440361400E2E7DB /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C282440361400E2E7DB /* SceneDelegate.m */; };
-		D3415C2C2440361400E2E7DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C2B2440361400E2E7DB /* ViewController.m */; };
-		D3415C2F2440361400E2E7DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3415C2D2440361400E2E7DB /* Main.storyboard */; };
+		D307F52724403C7800971DC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D307F52524403C7700971DC2 /* Main.storyboard */; };
+		D307F52924403EEE00971DC2 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D307F52824403EEE00971DC2 /* CoreServices.framework */; };
 		D3415C312440361500E2E7DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3415C302440361500E2E7DB /* Assets.xcassets */; };
 		D3415C342440361500E2E7DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3415C322440361500E2E7DB /* LaunchScreen.storyboard */; };
 		D3415C372440361500E2E7DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C362440361500E2E7DB /* main.m */; };
@@ -28,7 +26,6 @@
 		D3415C952440371E00E2E7DB /* optool-operations.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C582440371C00E2E7DB /* optool-operations.m */; };
 		D3415C962440371E00E2E7DB /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C5A2440371C00E2E7DB /* Application.m */; };
 		D3415C972440371E00E2E7DB /* ARMDumper.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C5D2440371C00E2E7DB /* ARMDumper.m */; };
-		D3415C982440371E00E2E7DB /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3415C5E2440371C00E2E7DB /* CMakeLists.txt */; };
 		D3415C992440371E00E2E7DB /* NSBundle+Clutch.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C612440371C00E2E7DB /* NSBundle+Clutch.m */; };
 		D3415C9A2440371E00E2E7DB /* ZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C622440371C00E2E7DB /* ZipArchive.m */; };
 		D3415C9B2440371E00E2E7DB /* ClutchPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = D3415C672440371D00E2E7DB /* ClutchPrint.m */; };
@@ -50,7 +47,6 @@
 		D3415CC3244037D800E2E7DB /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D3415CBF244037D800E2E7DB /* ioapi.c */; };
 		D3415CC6244037F200E2E7DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3415CC5244037F200E2E7DB /* Foundation.framework */; };
 		D3415CC7244037F700E2E7DB /* libMiniZip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3415CB12440379D00E2E7DB /* libMiniZip.a */; };
-		D3415CCD2440381000E2E7DB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3415CCC2440381000E2E7DB /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,14 +72,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D307F52624403C7700971DC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D307F52824403EEE00971DC2 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		D3415C212440361400E2E7DB /* Clutch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clutch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3415C242440361400E2E7DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D3415C252440361400E2E7DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D3415C272440361400E2E7DB /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		D3415C282440361400E2E7DB /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		D3415C2A2440361400E2E7DB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D3415C2B2440361400E2E7DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D3415C2E2440361400E2E7DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3415C302440361500E2E7DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3415C332440361500E2E7DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3415C352440361500E2E7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,7 +92,6 @@
 		D3415C472440371B00E2E7DB /* ClutchBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClutchBundle.m; sourceTree = "<group>"; };
 		D3415C482440371B00E2E7DB /* ARM64Dumper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARM64Dumper.h; sourceTree = "<group>"; };
 		D3415C492440371B00E2E7DB /* optool-operations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-operations.h"; sourceTree = "<group>"; };
-		D3415C4A2440371B00E2E7DB /* Clutch.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Clutch.entitlements; sourceTree = "<group>"; };
 		D3415C4B2440371B00E2E7DB /* optool-defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "optool-defines.h"; sourceTree = "<group>"; };
 		D3415C4C2440371B00E2E7DB /* Binary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Binary.m; sourceTree = "<group>"; };
 		D3415C4D2440371B00E2E7DB /* BundleDumpOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BundleDumpOperation.h; sourceTree = "<group>"; };
@@ -121,7 +111,6 @@
 		D3415C5B2440371C00E2E7DB /* LSApplicationWorkspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSApplicationWorkspace.h; sourceTree = "<group>"; };
 		D3415C5C2440371C00E2E7DB /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		D3415C5D2440371C00E2E7DB /* ARMDumper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARMDumper.m; sourceTree = "<group>"; };
-		D3415C5E2440371C00E2E7DB /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		D3415C5F2440371C00E2E7DB /* Clutch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Clutch-Prefix.pch"; sourceTree = "<group>"; };
 		D3415C602440371C00E2E7DB /* ClutchPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClutchPrint.h; sourceTree = "<group>"; };
 		D3415C612440371C00E2E7DB /* NSBundle+Clutch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Clutch.m"; sourceTree = "<group>"; };
@@ -176,8 +165,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3415CCD2440381000E2E7DB /* MobileCoreServices.framework in Frameworks */,
 				D3415CC7244037F700E2E7DB /* libMiniZip.a in Frameworks */,
+				D307F52924403EEE00971DC2 /* CoreServices.framework in Frameworks */,
 				D3415CC6244037F200E2E7DB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,14 +218,12 @@
 				D3415C4D2440371B00E2E7DB /* BundleDumpOperation.h */,
 				D3415C7A2440371D00E2E7DB /* BundleDumpOperation.m */,
 				D3415C5F2440371C00E2E7DB /* Clutch-Prefix.pch */,
-				D3415C4A2440371B00E2E7DB /* Clutch.entitlements */,
 				D3415C692440371D00E2E7DB /* ClutchBundle.h */,
 				D3415C472440371B00E2E7DB /* ClutchBundle.m */,
 				D3415C7E2440371E00E2E7DB /* ClutchCommands.h */,
 				D3415C6B2440371D00E2E7DB /* ClutchCommands.m */,
 				D3415C602440371C00E2E7DB /* ClutchPrint.h */,
 				D3415C672440371D00E2E7DB /* ClutchPrint.m */,
-				D3415C5E2440371C00E2E7DB /* CMakeLists.txt */,
 				D3415C812440371E00E2E7DB /* Device.h */,
 				D3415C552440371C00E2E7DB /* Device.m */,
 				D3415C3E2440371A00E2E7DB /* Dumper.h */,
@@ -283,14 +270,8 @@
 				D3415C622440371C00E2E7DB /* ZipArchive.m */,
 				D3415C6C2440371D00E2E7DB /* ZipOperation.h */,
 				D3415C862440371E00E2E7DB /* ZipOperation.m */,
-				D3415C242440361400E2E7DB /* AppDelegate.h */,
-				D3415C252440361400E2E7DB /* AppDelegate.m */,
-				D3415C272440361400E2E7DB /* SceneDelegate.h */,
-				D3415C282440361400E2E7DB /* SceneDelegate.m */,
-				D3415C2A2440361400E2E7DB /* ViewController.h */,
-				D3415C2B2440361400E2E7DB /* ViewController.m */,
-				D3415C2D2440361400E2E7DB /* Main.storyboard */,
 				D3415C302440361500E2E7DB /* Assets.xcassets */,
+				D307F52524403C7700971DC2 /* Main.storyboard */,
 				D3415C322440361500E2E7DB /* LaunchScreen.storyboard */,
 				D3415C352440361500E2E7DB /* Info.plist */,
 				D3415C362440361500E2E7DB /* main.m */,
@@ -315,6 +296,7 @@
 		D3415CC4244037F100E2E7DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D307F52824403EEE00971DC2 /* CoreServices.framework */,
 				D3415CCC2440381000E2E7DB /* MobileCoreServices.framework */,
 				D3415CCB2440380900E2E7DB /* libz.tbd */,
 				D3415CCA244037FE00E2E7DB /* libncurses.tbd */,
@@ -404,11 +386,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3415C342440361500E2E7DB /* LaunchScreen.storyboard in Resources */,
+				D307F52724403C7800971DC2 /* Main.storyboard in Resources */,
 				D3415CA22440371E00E2E7DB /* Info.plist.in in Resources */,
 				D3415C312440361500E2E7DB /* Assets.xcassets in Resources */,
 				D3415C8D2440371E00E2E7DB /* move_and_sign.sh in Resources */,
-				D3415C2F2440361400E2E7DB /* Main.storyboard in Resources */,
-				D3415C982440371E00E2E7DB /* CMakeLists.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,8 +429,6 @@
 				D3415CA72440371E00E2E7DB /* Framework64Dumper.m in Sources */,
 				D3415C992440371E00E2E7DB /* NSBundle+Clutch.m in Sources */,
 				D3415C9B2440371E00E2E7DB /* ClutchPrint.m in Sources */,
-				D3415C2C2440361400E2E7DB /* ViewController.m in Sources */,
-				D3415C262440361400E2E7DB /* AppDelegate.m in Sources */,
 				D3415C9C2440371E00E2E7DB /* ClutchCommands.m in Sources */,
 				D3415C372440361500E2E7DB /* main.m in Sources */,
 				D3415C972440371E00E2E7DB /* ARMDumper.m in Sources */,
@@ -461,7 +440,6 @@
 				D3415CA62440371E00E2E7DB /* ARM64Dumper.m in Sources */,
 				D3415CA32440371E00E2E7DB /* KJApplicationManager.m in Sources */,
 				D3415C8A2440371E00E2E7DB /* Framework.m in Sources */,
-				D3415C292440361400E2E7DB /* SceneDelegate.m in Sources */,
 				D3415C8E2440371E00E2E7DB /* ClutchBundle.m in Sources */,
 				D3415C932440371E00E2E7DB /* Device.m in Sources */,
 				D3415CA52440371E00E2E7DB /* ASLRDisabler.m in Sources */,
@@ -495,10 +473,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D3415C2D2440361400E2E7DB /* Main.storyboard */ = {
+		D307F52524403C7700971DC2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D3415C2E2440361400E2E7DB /* Base */,
+				D307F52624403C7700971DC2 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -628,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9JFZTHBR6;
 				GCC_PREFIX_HEADER = "Clutch/Clutch-Prefix.pch";
@@ -647,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G9JFZTHBR6;
 				GCC_PREFIX_HEADER = "Clutch/Clutch-Prefix.pch";

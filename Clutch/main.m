@@ -72,8 +72,8 @@ int main(int argc, const char *argv[]) {
 
         if (commands.commands) {
             for (ClutchCommand *command in commands.commands) {
-                NSLog(@"command: %@", command.commandDescription);
-                NSLog(@"commands.values=%@, command.option=%ld", commands.values, command.option);
+                KJPrint(@"command: %@", command.commandDescription);
+                KJPrint(@"commands.values=%@, command.option=%ld", commands.values, command.option);
                 // Switch flags
                 switch (command.flag) {
                     case ClutchCommandFlagArgumentRequired: {

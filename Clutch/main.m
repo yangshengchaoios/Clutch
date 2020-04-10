@@ -39,7 +39,7 @@ void listApps() {
             space = @" ";
         }
 
-        KJPrint(@"%d: %@%@ <%@>", count, space, _app.displayName, _app.bundleIdentifier);
+        KJPrint(@"%lud: %@%@ <%@>", count, space, _app.displayName, _app.bundleIdentifier);
     }
 }
 
@@ -187,7 +187,7 @@ int main(int argc, const char *argv[]) {
                         break;
                     }
                     case ClutchCommandOptionVersion: {
-                        KJPrint(CLUTCH_VERSION);
+                        KJPrint(@"%@", CLUTCH_VERSION);
                         break;
                     }
                     case ClutchCommandOptionHelp: {

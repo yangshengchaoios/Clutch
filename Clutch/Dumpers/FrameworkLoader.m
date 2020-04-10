@@ -79,7 +79,7 @@
 
     intptr_t dyldPointer = _dyld_get_image_vmaddr_slide(dyldIndex);
 
-    KJDebug(@"dyld offset %u", dyldPointer);
+    KJDebug(@"dyld offset %lud", dyldPointer);
 
     BOOL dumpResult;
 

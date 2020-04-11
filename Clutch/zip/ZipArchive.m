@@ -46,7 +46,7 @@
         _zipFile = NULL;
         _fileManager = fileManager;
         self.stringEncoding = NSUTF8StringEncoding;
-        self.compression = ZipArchiveCompressionDefault;
+        self.compression = ZipArchiveCompressionNone; // NOTE: default will cause mem over
     }
     return self;
 }

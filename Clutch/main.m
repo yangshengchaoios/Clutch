@@ -39,7 +39,7 @@ void listApps() {
             space = @" ";
         }
 
-        KJPrint(@"%lud: %@%@ <%@>", count, space, _app.displayName, _app.bundleIdentifier);
+        KJPrint(@"%lu: %@%@ <%@>", count, space, _app.displayName, _app.bundleIdentifier);
     }
 }
 

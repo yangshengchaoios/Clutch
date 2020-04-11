@@ -137,7 +137,7 @@
                                        newname:[_localPrefix stringByAppendingPathComponent:_localPath]];
                         KJDebug(@"Added %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
                     } else {
-                        KJPrint(@"Skipping %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
+                        KJDebug(@"Skipping %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
                     }
                 } else if (!isDirectory.boolValue &&
                            ![_pathComponents[2] isEqualToString:_application.executablePath.lastPathComponent]) {
@@ -145,7 +145,7 @@
                                    newname:[_localPrefix stringByAppendingPathComponent:_localPath]];
                     KJDebug(@"Added %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
                 } else {
-                    KJPrint(@"Skipping %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
+                    KJDebug(@"Skipping %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
                 }
             } else {
                 KJPrint(@"Skipping %@", _localPath);

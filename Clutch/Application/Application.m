@@ -193,17 +193,10 @@
                               withIntermediateDirectories:YES
                                                attributes:nil
                                                     error:nil];
-
-    // _mainZipOperation -> (dump+additional_dump Operations -> _additionalZipOpeartions) -> _finalizeDumpOperation
-    
     ZipOperation *_mainZipOperation = [[ZipOperation alloc] initWithApplication:self];
-    BundleDumpOperation *_dumpOperation = self.executable.dumpOperation;
+    BundleDumpOperation *_mainDumpOperation = self.executable.dumpOperation;
     FinalizeDumpOperation *_finalizeDumpOperation = [[FinalizeDumpOperation alloc] initWithApplication:self];
     _finalizeDumpOperation.onlyBinaries = _onlyBinaries;
-    if ( ! _onlyBinaries) {
-        [_finalizeDumpOperation addDependency:_mainZipOperation];
-    }
-    [_finalizeDumpOperation addDependency:_dumpOperation];
 
     NSMutableArray *_additionalDumpOpeartions = ({
         NSMutableArray *array = [NSMutableArray new];
@@ -231,58 +224,74 @@
         for (Application *_application in self.watchOSApps) {
             for (Extension *_extension in _application.extensions) {
                 ZipOperation *_zipOperation = [[ZipOperation alloc] initWithApplication:_extension];
-                [_zipOperation addDependency:_mainZipOperation];
                 [array addObject:_zipOperation];
             }
         }
 #endif
-
         for (Framework *_framework in self.frameworks) {
             ZipOperation *_zipOperation = [[ZipOperation alloc] initWithApplication:_framework];
-            [_zipOperation addDependency:_mainZipOperation];
             [array addObject:_zipOperation];
         }
-
         for (Extension *_extension in self.extensions) {
             ZipOperation *_zipOperation = [[ZipOperation alloc] initWithApplication:_extension];
-            [_zipOperation addDependency:_mainZipOperation];
             [array addObject:_zipOperation];
         }
         array;
     });
 
-    if (_onlyBinaries)
+    if (_onlyBinaries) {
         [_additionalZipOpeartions removeAllObjects];
-
-    for (unsigned int i = 1; i < _additionalZipOpeartions.count; i++) {
-        ZipOperation *_zipOperation = _additionalZipOpeartions[i];
-        [_zipOperation addDependency:_additionalZipOpeartions[i - 1]];
     }
 
-    for (NSOperation *operation in _additionalDumpOpeartions) {
-        [_finalizeDumpOperation addDependency:operation];
+    // serial zip operation
+    {
+        for (int i = 0; i < _additionalZipOpeartions.count; i++) {
+            ZipOperation *_zipOperation = _additionalZipOpeartions[i];
+            if (0 == i) {
+                if ( ! _onlyBinaries) {
+                    [_zipOperation addDependency:_mainZipOperation];
+                }
+            } else {
+                [_zipOperation addDependency:_additionalZipOpeartions[i - 1]];
+            }
+        }
+        if (_additionalZipOpeartions.lastObject) {
+            [_finalizeDumpOperation addDependency:_additionalZipOpeartions.lastObject];
+        }
     }
-
-    if (_additionalZipOpeartions.lastObject) {
-        [_finalizeDumpOperation addDependency:_additionalZipOpeartions.lastObject];
+    
+    // serial dump operation
+    {
+        for (int i = 0; i < _additionalDumpOpeartions.count; i++) {
+            BundleDumpOperation *_dumpOperation = _additionalDumpOpeartions[i];
+            if (0 == i) {
+                [_dumpOperation addDependency:_mainDumpOperation];
+            } else {
+                [_dumpOperation addDependency:_additionalDumpOpeartions[i - 1]];
+            }
+        }
+        if (_additionalDumpOpeartions.lastObject) {
+            [_finalizeDumpOperation addDependency:_additionalDumpOpeartions.lastObject];
+        }
     }
-
-    if (!_onlyBinaries)
-        [self.dumpQueue addOperation:_mainZipOperation];
-
-    [self.dumpQueue addOperation:_dumpOperation];
-
-    for (NSOperation *operation in _additionalDumpOpeartions) {
-        [self.dumpQueue addOperation:operation];
+    
+    // add operations into queue and start
+    {
+        if ( ! _onlyBinaries) {
+            [self.dumpQueue addOperation:_mainZipOperation];
+        }
+        [self.dumpQueue addOperation:_mainDumpOperation];
+        for (NSOperation *operation in _additionalDumpOpeartions) {
+            [self.dumpQueue addOperation:operation];
+        }
+        for (NSOperation *operation in _additionalZipOpeartions) {
+            [self.dumpQueue addOperation:operation];
+        }
+        [self.dumpQueue addOperation:_finalizeDumpOperation];
     }
-
-    for (NSOperation *operation in _additionalZipOpeartions) {
-        [self.dumpQueue addOperation:operation];
-    }
-
-    [self.dumpQueue addOperation:_finalizeDumpOperation];
+    
+    // waiting for operations finished
     BOOL failed = NO;
-
     while (self.dumpQueue.operationCount > 0) {
         for (NSOperation *op in self.dumpQueue.operations) {
             if ([op isKindOfClass:[BundleDumpOperation class]]) {
@@ -297,7 +306,6 @@
     if (failed) {
         [self.dumpQueue cancelAllOperations];
     }
-
     [self.dumpQueue waitUntilAllOperationsAreFinished];
 
     return !failed;

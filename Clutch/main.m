@@ -71,8 +71,7 @@ int main(int argc, const char *argv[]) {
 
         if (commands.commands) {
             for (ClutchCommand *command in commands.commands) {
-                KJPrint(@"command: %@", command.commandDescription);
-                KJPrint(@"commands.values=%@, command.option=%ul", commands.values, command.option);
+//                KJDebug(@"commands.values=%@, command.option=%d", commands.values, (int)command.option);
                 // Switch flags
                 switch (command.flag) {
                     case ClutchCommandFlagArgumentRequired: {
@@ -130,7 +129,6 @@ int main(int argc, const char *argv[]) {
                         NSArray *_installedArray = _installedApps.allValues;
 
                         for (NSString *selection in values) {
-                            KJPrint(@"selection: %@", selection);
                             NSUInteger key;
                             Application *_selectedApp;
 
@@ -178,11 +176,9 @@ int main(int argc, const char *argv[]) {
                         break;
                     }
                     case ClutchCommandOptionClean: {
-                        [[NSFileManager defaultManager] removeItemAtPath:@"/var/tmp/clutch" error:nil];
-                        [[NSFileManager defaultManager] createDirectoryAtPath:@"/var/tmp/clutch"
-                                                  withIntermediateDirectories:YES
-                                                                   attributes:nil
-                                                                        error:nil];
+                        NSString *tmpDir = [NSTemporaryDirectory() stringByAppendingPathComponent:@"clutch"];
+                        [[NSFileManager defaultManager] removeItemAtPath:tmpDir error:nil];
+                        [[NSFileManager defaultManager] createDirectoryAtPath:tmpDir withIntermediateDirectories:YES attributes:nil error:nil];
                         break;
                     }
                     case ClutchCommandOptionVersion: {

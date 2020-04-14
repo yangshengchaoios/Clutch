@@ -26,7 +26,6 @@
 @implementation Application
 
 - (instancetype)initWithBundleInfo:(NSDictionary *)info {
-    KJPrint(@"Application initWithBundleInfo: %@", info);
     if (self = [super initWithBundleInfo:info]) {
 
         _workingUUID = [NSUUID new];
@@ -195,34 +194,29 @@
                                                attributes:nil
                                                     error:nil];
 
+    // _mainZipOperation -> (dump+additional_dump Operations -> _additionalZipOpeartions) -> _finalizeDumpOperation
+    
     ZipOperation *_mainZipOperation = [[ZipOperation alloc] initWithApplication:self];
-
     BundleDumpOperation *_dumpOperation = self.executable.dumpOperation;
-
     FinalizeDumpOperation *_finalizeDumpOperation = [[FinalizeDumpOperation alloc] initWithApplication:self];
     _finalizeDumpOperation.onlyBinaries = _onlyBinaries;
-
-    if (!_onlyBinaries)
+    if ( ! _onlyBinaries) {
         [_finalizeDumpOperation addDependency:_mainZipOperation];
-
+    }
     [_finalizeDumpOperation addDependency:_dumpOperation];
 
     NSMutableArray *_additionalDumpOpeartions = ({
         NSMutableArray *array = [NSMutableArray new];
-
 #ifdef DEBUG
         for (Application *_application in self.watchOSApps) {
             for (Extension *_extension in _application.extensions) {
-
                 [array addObject:_extension.executable.dumpOperation];
             }
         }
 #endif
-
         for (Framework *_framework in self.frameworks) {
             [array addObject:_framework.executable.dumpOperation];
         }
-
         for (Extension *_extension in self.extensions) {
             [array addObject:_extension.executable.dumpOperation];
         }
@@ -233,13 +227,11 @@
 
     NSMutableArray *_additionalZipOpeartions = ({
         NSMutableArray *array = [NSMutableArray new];
-
 #ifdef DEBUG
         for (Application *_application in self.watchOSApps) {
             for (Extension *_extension in _application.extensions) {
                 ZipOperation *_zipOperation = [[ZipOperation alloc] initWithApplication:_extension];
                 [_zipOperation addDependency:_mainZipOperation];
-
                 [array addObject:_zipOperation];
             }
         }
@@ -248,14 +240,12 @@
         for (Framework *_framework in self.frameworks) {
             ZipOperation *_zipOperation = [[ZipOperation alloc] initWithApplication:_framework];
             [_zipOperation addDependency:_mainZipOperation];
-
             [array addObject:_zipOperation];
         }
 
         for (Extension *_extension in self.extensions) {
             ZipOperation *_zipOperation = [[ZipOperation alloc] initWithApplication:_extension];
             [_zipOperation addDependency:_mainZipOperation];
-
             [array addObject:_zipOperation];
         }
         array;
@@ -337,6 +327,10 @@
 
 - (NSString *)workingPath {
     return _workingPath;
+}
+
+- (NSString *)ipaPath {
+    return [_workingPath stringByAppendingPathComponent:self.zipFilename];
 }
 
 @end

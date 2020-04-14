@@ -40,6 +40,7 @@
             return nil;
         }
         _dumpQueue = [NSOperationQueue new];
+//        _dumpQueue.maxConcurrentOperationCount = 2;  // control the max concurrent op count
     }
 
     return self;

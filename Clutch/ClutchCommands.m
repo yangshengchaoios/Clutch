@@ -73,7 +73,7 @@
     NSMutableArray<NSString *> *returnValues = [NSMutableArray new];
     BOOL commandFound = NO;
     
-    KJPrint(@"arguments: %@", arguments);
+//    KJPrint(@"arguments: %@", arguments);
     for (NSString *argument in arguments) {
         if ([argument isEqualToString:arguments[0]]) { // pass the index=0 param
             continue;

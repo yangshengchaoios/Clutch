@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, retain, readonly) NSArray *extensions;
 @property (nonatomic, retain, readonly) NSArray *frameworks;
 @property (nonatomic, retain, readonly) NSArray *watchOSApps;
+@property (nonatomic, retain, readonly) NSString *ipaPath;
 
 - (BOOL)dumpToDirectoryURL:(nullable NSURL *)directoryURL onlyBinaries:(BOOL)yrn;
 

@@ -40,7 +40,7 @@
     if (self = [super init]) {
         _bundle = path;
 
-        KJPrint(@"######## bundle URL %@", _bundle.bundleContainerURL);
+        KJPrint(@"Bundle URL %@", _bundle.bundleContainerURL);
         if ([(_bundle.bundleContainerURL).path hasSuffix:@"Frameworks"]) {
             _frameworksPath = (_bundle.bundleContainerURL).path;
         }

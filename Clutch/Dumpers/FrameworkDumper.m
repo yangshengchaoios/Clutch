@@ -214,7 +214,11 @@
 
     KJDebug(@"i must have called a thousand times!");
 
-    KJDebug(@"hello potato posix_spawn %@", @(argv[0]));
+    NSString *ns_argv = @"";
+    for (size_t i = 0; argv[i] != NULL; i++) {
+        ns_argv = [ns_argv stringByAppendingFormat:@"%s ", argv[i]];
+    }
+    KJDebug(@"hello potato posix_spawn: %@", ns_argv);
 
     posix_spawnattr_init(&attr);
 

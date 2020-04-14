@@ -86,9 +86,7 @@ extern struct timeval gStart;
 
 - (void)main {
     @try {
-
         if (_onlyBinaries) {
-
             NSDirectoryEnumerator *dirEnumerator =
                 [NSFileManager.defaultManager enumeratorAtURL:[NSURL fileURLWithPath:_application.workingPath]
                                    includingPropertiesForKeys:@[ NSURLNameKey, NSURLIsDirectoryKey ]
@@ -98,142 +96,88 @@ extern struct timeval gStart;
                                                      CLUTCH_UNUSED(error);
                                                      return YES;
                                                  }];
-
             NSMutableArray *plists = [NSMutableArray new];
-
             for (NSURL *theURL in dirEnumerator) {
                 NSNumber *isDirectory;
                 [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:nil];
-
                 if ([theURL.lastPathComponent isEqualToString:@"filesToAdd.plist"]) {
-
                     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfURL:theURL];
-
-                    if (dict)
+                    if (dict) {
                         [plists addObject:theURL.path];
-
+                    }
                     [[NSFileManager defaultManager] removeItemAtURL:theURL error:nil];
                 }
             }
-
             __block BOOL status = plists.count == self.expectedBinariesCount;
-
             if (status) {
                 KJPrint(@"Finished dumping %@ to %@", _application.bundleIdentifier, _application.workingPath);
             } else {
                 KJPrint(@"Failed to dump %@ :(", _application.bundleIdentifier);
                 return;
             }
-
             [self completeOperation];
-
             return;
-        }
-
-        NSString *_zipFilename = _application.zipFilename;
-
-        if (_application.parentBundle) {
-            KJDebug(@"Zipping %@", _application.bundleURL.lastPathComponent);
         }
 
         if (_archive == nil) {
             _archive = [[ZipArchive alloc] init];
-            [_archive CreateZipFile2:[_application.workingPath stringByAppendingPathComponent:_zipFilename] append:YES];
+            [_archive CreateZipFile2:_application.ipaPath append:YES];
         }
-
-        NSDirectoryEnumerator *dirEnumerator =
-            [NSFileManager.defaultManager enumeratorAtURL:[NSURL fileURLWithPath:_application.workingPath]
-                               includingPropertiesForKeys:@[ NSURLNameKey, NSURLIsDirectoryKey ]
-                                                  options:0
-                                             errorHandler:^BOOL(NSURL *url, NSError *error) {
-                                                 CLUTCH_UNUSED(url);
-                                                 CLUTCH_UNUSED(error);
-                                                 return YES;
-                                             }];
-
-        NSMutableArray *plists = [NSMutableArray new];
-
-        for (NSURL *theURL in dirEnumerator) {
-            NSNumber *isDirectory;
-            [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:nil];
-
-            if ([theURL.lastPathComponent isEqualToString:@"filesToAdd.plist"]) {
-
-                NSDictionary *dict = [NSDictionary dictionaryWithContentsOfURL:theURL];
-
-                if (dict) {
-                    for (NSString *key in dict.allKeys) {
-                        NSString *zipPath = dict[key];
-                        [_archive addFileToZip:key newname:zipPath];
-                        KJDebug(@"Added %@", zipPath);
-                    }
-
-                    [plists addObject:theURL.path];
-                }
-            }
-        }
-
-        [_archive CloseZipFile2];
-
-        // cleanup
-
-#ifndef DEBUG
-        for (NSString *path in plists)
-            [[NSFileManager defaultManager] removeItemAtPath:path.stringByDeletingLastPathComponent error:nil];
-#endif
-
-        __block BOOL status = plists.count == self.expectedBinariesCount;
-
-        NSString *_ipaPath = [@"/private/var/mobile/Documents/Dumped" stringByAppendingPathComponent:_zipFilename];
-
-        if (!status) {
-            // remove .ipa if failed
-            [[NSFileManager defaultManager]
-                removeItemAtPath:[_application.workingPath stringByAppendingPathComponent:_zipFilename]
-                           error:nil];
-        } else {
-            [[NSFileManager defaultManager] createDirectoryAtPath:@"/private/var/mobile/Documents/Dumped"
-                                      withIntermediateDirectories:YES
-                                                       attributes:nil
-                                                            error:nil];
-
-            NSURL *ipaSrcURL =
-                [NSURL fileURLWithPath:[_application.workingPath stringByAppendingPathComponent:_zipFilename]];
-            NSError *anError;
-            if ([[NSFileManager defaultManager] fileExistsAtPath:_ipaPath]) {
-                for (int i = 2; i < 999; ++i) {
-                    NSFileManager *fileMgr = [NSFileManager defaultManager];
-                    NSString *newName = [_ipaPath.lastPathComponent.stringByDeletingPathExtension
-                        stringByAppendingFormat:@"-%i.%@", i, _ipaPath.pathExtension];
-                    NSString *currentFile =
-                        [_ipaPath.stringByDeletingLastPathComponent stringByAppendingPathComponent:newName];
-                    BOOL fileExists = [fileMgr fileExistsAtPath:currentFile];
-                    if (!fileExists) {
-                        _ipaPath = currentFile;
-                        if (![[NSFileManager defaultManager] moveItemAtURL:ipaSrcURL
-                                                                     toURL:[NSURL fileURLWithPath:currentFile]
-                                                                     error:&anError]) {
-                            KJDebug(@"Failed to move from %@ to %@ with error %@",
-                                    ipaSrcURL,
-                                    [NSURL fileURLWithPath:currentFile],
-                                    anError);
+        
+        // add dumped binaries to ipa
+        BOOL dumpedResult = NO;
+        {
+            NSDirectoryEnumerator *dirEnumerator =
+                [NSFileManager.defaultManager enumeratorAtURL:[NSURL fileURLWithPath:_application.workingPath]
+                                   includingPropertiesForKeys:@[ NSURLNameKey, NSURLIsDirectoryKey ]
+                                                      options:0
+                                                 errorHandler:^BOOL(NSURL *url, NSError *error) {
+                                                     CLUTCH_UNUSED(url);
+                                                     CLUTCH_UNUSED(error);
+                                                     return YES;
+                                                 }];
+            NSMutableArray *plists = [NSMutableArray new];
+            for (NSURL *theURL in dirEnumerator) {
+                NSNumber *isDirectory;
+                [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:nil];
+                if ([theURL.lastPathComponent isEqualToString:@"filesToAdd.plist"]) {
+                    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfURL:theURL];
+                    if (dict) {
+                        for (NSString *key in dict.allKeys) {
+                            NSString *zipPath = dict[key];
+                            [_archive addFileToZip:key newname:zipPath];
+                            KJDebug(@"Added %@", zipPath);
                         }
-                        break;
+                        [plists addObject:theURL.path];
                     }
                 }
-            } else {
-                if (![[NSFileManager defaultManager] moveItemAtURL:ipaSrcURL
-                                                             toURL:[NSURL fileURLWithPath:_ipaPath]
-                                                             error:&anError]) {
-                    KJDebug(@"Failed to move from %@ to %@ with error %@",
-                            ipaSrcURL,
-                            [NSURL fileURLWithPath:_ipaPath],
-                            anError);
-                }
             }
+            [_archive CloseZipFile2];
+            KJPrint(@"Dumped binaries count: %ld", plists.count);
+            KJPrint(@"Expected binaries count: %ld", self.expectedBinariesCount);
+            dumpedResult = (plists.count == self.expectedBinariesCount);
         }
-
-        KJPrint(@"%@: %@", status ? @"DONE" : @"FAILED", status ? _ipaPath : _application);
+        
+        NSString *dumpedIpaPath = [@"/private/var/mobile/Documents/Dumped" stringByAppendingPathComponent:_application.zipFilename];
+        if (dumpedResult) {
+            [[NSFileManager defaultManager] createDirectoryAtPath:@"/private/var/mobile/Documents/Dumped" withIntermediateDirectories:YES attributes:nil error:nil];
+            if ([[NSFileManager defaultManager] fileExistsAtPath:dumpedIpaPath]) {
+                KJPrint(@"Remove old ipa '%@'", dumpedIpaPath);
+                [[NSFileManager defaultManager] removeItemAtPath:dumpedIpaPath error:nil];
+            }
+            NSError *anError;
+            if ( ! [[NSFileManager defaultManager] moveItemAtPath:_application.ipaPath toPath:dumpedIpaPath error:&anError]) {
+                KJPrint(@"Failed to move from '%@' to '%@' with error: %@", _application.ipaPath, dumpedIpaPath, anError);
+            } else {
+                KJPrint(@"Success move ipa from '%@' to '%@'", _application.ipaPath, dumpedIpaPath);
+            }
+            
+            // clean
+            KJPrint(@"Remove tmp dir: %@", _application.workingPath);
+            [[NSFileManager defaultManager] removeItemAtPath:_application.workingPath error:nil];
+        } else {
+            KJPrint(@"Dump failed!!! tmp ipa path '%@'", _application.ipaPath);
+        }
 
         // Do the main work of the operation here.
         [self completeOperation];

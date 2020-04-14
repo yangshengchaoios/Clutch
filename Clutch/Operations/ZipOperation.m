@@ -80,7 +80,7 @@
         NSString *_zipFilename = _application.zipFilename;
         NSString *_localPrefix = _application.zipPrefix;
 
-        KJPrint(@"Zipping %@", _application.bundleURL.lastPathComponent);
+        KJPrint(@"Start zipping bundleFileName=%@", _application.bundleURL.lastPathComponent);
 
         if (!_archive) {
             _archive = [[ZipArchive alloc] init];
@@ -121,39 +121,35 @@
         for (NSURL *theURL in dirEnumerator) {
             NSNumber *isDirectory;
             [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:nil];
-
-            NSString *_localPath =
-                [theURL.path stringByReplacingOccurrencesOfString:_application.bundleContainerURL.path withString:@""];
-
+            NSString *_localPath = [theURL.path stringByReplacingOccurrencesOfString:_application.bundleContainerURL.path withString:@""];
             NSArray *_pathComponents = _localPath.pathComponents;
+            NSString *_new_name = [_localPrefix stringByAppendingPathComponent:_localPath];
 
             if (_pathComponents.count > 2) {
-                if ([_pathComponents[2] isEqualToString:@"SC_Info"] || [_pathComponents[2] isEqualToString:@"Watch"] ||
+                if ([_pathComponents[2] isEqualToString:@"SC_Info"] ||
+                    [_pathComponents[2] isEqualToString:@"Watch"] ||
                     [_pathComponents[2] isEqualToString:@"Frameworks"] ||
                     [_pathComponents[2] isEqualToString:@"PlugIns"]) {
-                    if ([_localPath.lastPathComponent hasPrefix:@"libswift"] &&
-                        ![_localPath.pathExtension caseInsensitiveCompare:@"dylib"]) {
-                        [_archive addFileToZip:theURL.path
-                                       newname:[_localPrefix stringByAppendingPathComponent:_localPath]];
-                        KJDebug(@"Added %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
+                    if ([_localPath.lastPathComponent hasPrefix:@"libswift"] && ! [_localPath.pathExtension caseInsensitiveCompare:@"dylib"]) {
+                        [_archive addFileToZip:theURL.path newname:_new_name];
+                        KJDebug(@"Added %@", _new_name);
                     } else {
-                        KJDebug(@"Skipping %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
+                        KJDebug(@"    Skipping %@", _new_name);
                     }
-                } else if (!isDirectory.boolValue &&
-                           ![_pathComponents[2] isEqualToString:_application.executablePath.lastPathComponent]) {
-                    [_archive addFileToZip:theURL.path
-                                   newname:[_localPrefix stringByAppendingPathComponent:_localPath]];
-                    KJDebug(@"Added %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
+                } else if ( ! isDirectory.boolValue && ! [_pathComponents[2] isEqualToString:_application.executablePath.lastPathComponent]) {
+                    [_archive addFileToZip:theURL.path newname:_new_name];
+                    KJDebug(@"Added %@", _new_name);
                 } else {
-                    KJDebug(@"Skipping %@", [_localPrefix stringByAppendingPathComponent:_localPath]);
+                    KJDebug(@"    Skipping %@", _new_name);
                 }
             } else {
-                KJPrint(@"Skipping %@", _localPath);
+                KJPrint(@"    Skipping %@", _localPath);
             }
         }
 
         [_archive CloseZipFile2];
-
+        KJPrint(@"Finish zipping bundleFileName=%@", _application.bundleURL.lastPathComponent);
+        
         // Do the main work of the operation here.
         [self completeOperation];
     } @catch (...) {

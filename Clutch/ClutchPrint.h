@@ -14,7 +14,7 @@ typedef NS_ENUM(NSUInteger, KJPrintLogLevel) {
 };
 
 #define __Print(l, s, ...) do { \
-NSMutableString *logString = [NSMutableString stringWithFormat:@"[%@][%@(%d)] ",l, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__]; \
+NSMutableString *logString = [NSMutableString stringWithFormat:@"[%@][%d][%@(%d)] ",l, getpid(), [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__]; \
 if (s) { [logString appendFormat:(s), ##__VA_ARGS__]; } else { [logString appendString:@"(null)"]; } \
 printf("%s\n", logString.UTF8String); \
 } while(0);

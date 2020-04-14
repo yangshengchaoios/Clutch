@@ -320,7 +320,6 @@
     }
 
     // nice! now let's write the new checksum data
-    KJPrint(@"Writing new checksum");
     [fileHandle seekToFileOffset:(begin + hashOffset)];
 
     NSData *trimmed_checksum = [[NSData dataWithBytes:checksum
@@ -328,7 +327,7 @@
     free(checksum);
     [fileHandle writeData:trimmed_checksum];
 
-    KJDebug(@"Done writing checksum");
+    KJPrint(@"Done writing checksum %@", _originalBinary);
 
     return YES;
 }

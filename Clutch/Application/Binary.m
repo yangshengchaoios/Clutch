@@ -36,31 +36,18 @@
     if (!path) {
         return nil;
     }
-
     if (self = [super init]) {
         _bundle = path;
-
         KJPrint(@"Bundle URL %@", _bundle.bundleContainerURL);
         if ([(_bundle.bundleContainerURL).path hasSuffix:@"Frameworks"]) {
             _frameworksPath = (_bundle.bundleContainerURL).path;
         }
-
         // perm. fix
-
         NSDictionary *ownershipInfo = @{NSFileOwnerAccountName : @"mobile", NSFileGroupOwnerAccountName : @"mobile"};
-
         [[NSFileManager defaultManager] setAttributes:ownershipInfo ofItemAtPath:self.binaryPath error:nil];
-
-        _sinfPath = [_bundle pathForResource:_bundle.executablePath.lastPathComponent
-                                      ofType:@"sinf"
-                                 inDirectory:@"SC_Info"];
-        _supfPath = [_bundle pathForResource:_bundle.executablePath.lastPathComponent
-                                      ofType:@"supf"
-                                 inDirectory:@"SC_Info"];
-        _suppPath = [_bundle pathForResource:_bundle.executablePath.lastPathComponent
-                                      ofType:@"supp"
-                                 inDirectory:@"SC_Info"];
-
+        _sinfPath = [_bundle pathForResource:_bundle.executablePath.lastPathComponent ofType:@"sinf" inDirectory:@"SC_Info"];
+        _supfPath = [_bundle pathForResource:_bundle.executablePath.lastPathComponent ofType:@"supf" inDirectory:@"SC_Info"];
+        _suppPath = [_bundle pathForResource:_bundle.executablePath.lastPathComponent ofType:@"supp" inDirectory:@"SC_Info"];
         _dumpOperation = [[BundleDumpOperation alloc] initWithBundle:_bundle];
         FILE *fp = fopen(_bundle.executablePath.UTF8String, "r+");
         if (NULL == fp) {
@@ -70,16 +57,12 @@
         int fd1 = fileno(fp);
         NSFileHandle *tmpHandle = [[NSFileHandle alloc] initWithFileDescriptor:fd1 closeOnDealloc:YES];
         NSData *headersData = tmpHandle.availableData;
-
         thin_header headers[4];
         uint32_t numHeaders = 0;
-
         headersFromBinary(headers, headersData, &numHeaders);
-
         int m32 = 0, m64 = 0;
         for (unsigned int i = 0; i < numHeaders; i++) {
             thin_header macho = headers[i];
-
             switch (macho.header.cputype) {
                 case CPU_TYPE_ARM:
                     m32++;
@@ -93,42 +76,29 @@
         _m32 = m32 > 1;
         _m64 = m64 > 1;
         _isFAT = numHeaders > 1;
-
         _hasRestrictedSegment = NO;
-
         struct thin_header macho = headers[0];
-
         unsigned long long size = [tmpHandle seekToEndOfFile];
-
         [tmpHandle seekToFileOffset:macho.offset + macho.size];
-
         for (unsigned int i = 0; i < macho.header.ncmds; i++) {
             if (tmpHandle.offsetInFile >= size ||
                 tmpHandle.offsetInFile > macho.header.sizeofcmds + macho.size + macho.offset)
                 break;
-
             uint32_t cmd = [tmpHandle unsignedInt32Atoffset:tmpHandle.offsetInFile];
             uint32_t size_ = [tmpHandle unsignedInt32Atoffset:tmpHandle.offsetInFile + sizeof(uint32_t)];
-
             struct segment_command *command;
-
             command = malloc(sizeof(struct segment_command));
-
-            [tmpHandle getBytes:command
-                        inRange:NSMakeRange((NSUInteger)(tmpHandle.offsetInFile), sizeof(struct segment_command))];
-
+            [tmpHandle getBytes:command inRange:NSMakeRange((NSUInteger)(tmpHandle.offsetInFile), sizeof(struct segment_command))];
             if (((cmd == LC_SEGMENT) || (cmd == LC_SEGMENT_64)) && (strcmp(command->segname, "__RESTRICT") == 0)) {
                 _hasRestrictedSegment = YES;
                 break;
-            } else
+            } else {
                 [tmpHandle seekToFileOffset:tmpHandle.offsetInFile + size_];
-
+            }
             free(command);
         }
-
         [tmpHandle closeFile];
     }
-
     return self;
 }
 

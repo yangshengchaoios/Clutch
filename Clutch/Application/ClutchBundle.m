@@ -48,12 +48,9 @@
 
 - (void)prepareForDump {
     _executable = [[Binary alloc] initWithBundle:self];
-
     KJPrintVerbose(@"Preparing to dump %@", _executable);
     KJPrintVerbose(@"Path: %@", self.executable.binaryPath);
-
     NSDictionary *ownershipInfo = @{NSFileOwnerAccountName : @"mobile", NSFileGroupOwnerAccountName : @"mobile"};
-
     [[NSFileManager defaultManager] setAttributes:ownershipInfo ofItemAtPath:self.executable.binaryPath error:nil];
 }
 

@@ -180,8 +180,7 @@
                 NSNumber *archOffset = @SWAP(arch.offset);
                 KJDebug(@"current offset %u", SWAP(arch.offset));
                 if ([_headersToStrip containsObject:archOffset]) {
-                    KJDebug(
-                        @"arch to strip %u %u", (cpu_subtype_t)SWAP(arch.cpusubtype), (cpu_type_t)SWAP(arch.cputype));
+                    KJDebug(@"arch to strip %u %u", (cpu_subtype_t)SWAP(arch.cpusubtype), (cpu_type_t)SWAP(arch.cputype));
                 } else {
                     NSValue *archValue = [NSValue value:&arch withObjCType:@encode(struct fat_arch)];
                     [_headersToKeep addObject:archValue];

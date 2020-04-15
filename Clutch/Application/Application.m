@@ -186,9 +186,7 @@
 - (BOOL)dumpToDirectoryURL:(nullable NSURL *)directoryURL onlyBinaries:(BOOL)_onlyBinaries {
     KJPrint(@"dumpToDirectoryURL: %@, onlyBinaries: %d", directoryURL, _onlyBinaries);
     [super dumpToDirectoryURL:directoryURL];
-
     [self prepareForDump];
-
     [[NSFileManager defaultManager] createDirectoryAtPath:_workingPath
                               withIntermediateDirectories:YES
                                                attributes:nil
